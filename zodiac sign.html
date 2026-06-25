@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zodiac Sign  calc</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, button {
+            padding: 8px;
+            margin: 5px;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Zodiac Sign Calculator</h2>
+
+    <input type="number" id="day" placeholder="Enter Day" min="1" max="31">
+    <input type="number" id="month" placeholder="Enter Month" min="1" max="12">
+    <br>
+    <button onclick="findZodiac()">Calculate</button>
+
+    <div id="result"></div>
+
+    <script>
+        function findZodiac() {
+            let day = parseInt(document.getElementById("day").value);
+            let month = parseInt(document.getElementById("month").value);
+            let sign = "";
+
+            if ((month == 3 && day >= 21) || (month == 4 && day <= 19))
+                sign = "Aries";
+            else if ((month == 4 && day >= 20) || (month == 5 && day <= 20))
+                sign = "Taurus";
+            else if ((month == 5 && day >= 21) || (month == 6 && day <= 20))
+                sign = "Gemini";
+            else if ((month == 6 && day >= 21) || (month == 7 && day <= 22))
+                sign = "Cancer";
+            else if ((month == 7 && day >= 23) || (month == 8 && day <= 22))
+                sign = "Leo";
+            else if ((month == 8 && day >= 23) || (month == 9 && day <= 22))
+                sign = "Virgo";
+            else if ((month == 9 && day >= 23) || (month == 10 && day <= 22))
+                sign = "Libra";
+            else if ((month == 10 && day >= 23) || (month == 11 && day <= 21))
+                sign = "Scorpio";
+            else if ((month == 11 && day >= 22) || (month == 12 && day <= 21))
+                sign = "Sagittarius";
+            else if ((month == 12 && day >= 22) || (month == 1 && day <= 19))
+                sign = "Capricorn";
+            else if ((month == 1 && day >= 20) || (month == 2 && day <= 18))
+                sign = "Aquarius";
+            else if ((month == 2 && day >= 19) || (month == 3 && day <= 20))
+                sign = "Pisces";
+            else
+                sign = "Invalid Date";
+
+            document.getElementById("result").innerHTML =
+                "Your Zodiac Sign is: " + sign;
+        }
+    </script>
+
+</body>
+</html>
