@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zodiac Sign Calculator</title>
+</head>
+<body>
+
+<h2>Zodiac Sign Calculator</h2>
+
+<script>
+    let day = parseInt(prompt("Enter Day:"));
+    let month = parseInt(prompt("Enter Month:"));
+
+    if (isNaN(day) || isNaN(month)) {
+        alert("Invalid Date");
+    }
+    else if (month < 1 || month > 12) {
+        alert("Invalid Month");
+    }
+    else if (
+        day < 1 ||
+        (month == 1 && day > 31) ||
+        (month == 2 && day > 29) ||
+        (month == 3 && day > 31) ||
+        (month == 4 && day > 30) ||
+        (month == 5 && day > 31) ||
+        (month == 6 && day > 30) ||
+        (month == 7 && day > 31) ||
+        (month == 8 && day > 31) ||
+        (month == 9 && day > 30) ||
+        (month == 10 && day > 31) ||
+        (month == 11 && day > 30) ||
+        (month == 12 && day > 31)
+    ) {
+        alert("Invalid Date");
+    }
+    else {
+        let sign = "";
+
+        if ((month == 3 && day >= 21) || (month == 4 && day <= 19))
+            sign = "Aries";
+        else if ((month == 4 && day >= 20) || (month == 5 && day <= 20))
+            sign = "Taurus";
+        else if ((month == 5 && day >= 21) || (month == 6 && day <= 20))
+            sign = "Gemini";
+        else if ((month == 6 && day >= 21) || (month == 7 && day <= 22))
+            sign = "Cancer";
+        else if ((month == 7 && day >= 23) || (month == 8 && day <= 22))
+            sign = "Leo";
+        else if ((month == 8 && day >= 23) || (month == 9 && day <= 22))
+            sign = "Virgo";
+        else if ((month == 9 && day >= 23) || (month == 10 && day <= 22))
+            sign = "Libra";
+        else if ((month == 10 && day >= 23) || (month == 11 && day <= 21))
+            sign = "Scorpio";
+        else if ((month == 11 && day >= 22) || (month == 12 && day <= 21))
+            sign = "Sagittarius";
+        else if ((month == 12 && day >= 22) || (month == 1 && day <= 19))
+            sign = "Capricorn";
+        else if ((month == 1 && day >= 20) || (month == 2 && day <= 18))
+            sign = "Aquarius";
+        else
+            sign = "Pisces";
+
+        alert("Your Zodiac Sign is: " + sign);
+    }
+</script>
+
+</body>
+</html>
